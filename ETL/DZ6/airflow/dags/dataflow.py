@@ -3,6 +3,7 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.hooks.postgres_hook import PostgresHook
 
+
 def dump_data(**kwargs):
     phook = PostgresHook(postgres_conn_id="postgres_target")
     conn = phook.get_conn()
